@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import "./App.css";
 import Person from "./Person/Person";
 
@@ -10,7 +9,9 @@ class App extends Component {
       { name: "Max", age: 32 },
       { name: "Nikolya", age: 41 },
     ],
+    otherState: "some other value",
   };
+
   switchNameHandler = () => {
     this.setState({
       persons: [
@@ -20,10 +21,10 @@ class App extends Component {
       ],
     });
   };
+
   getAge = () => {
     return Math.floor(Math.random() * 50);
   };
-
   render() {
     return (
       <div className="App">
