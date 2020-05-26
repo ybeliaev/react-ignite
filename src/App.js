@@ -11,18 +11,27 @@ class App extends Component {
       { name: "Nikolya", age: 41 },
     ],
   };
-  getAge() {
+  switchNameHandler = () => {
+    this.setState({
+      persons: [
+        { name: "Marry", age: 33 },
+        { name: "Foxy", age: 17 },
+        { name: "Nino", age: 32 },
+      ],
+    });
+  };
+  getAge = () => {
     return Math.floor(Math.random() * 50);
-  }
+  };
 
   render() {
     return (
       <div className="App">
         <h1>Hello!</h1>
-        <button>Switch name</button>
-        <Person name="John" age={this.getAge()} />
-        <Person name="Maxim" age={this.getAge()} />
-        <Person name="Yulia" age={this.getAge()}>
+        <button onClick={this.switchNameHandler}>Switch name</button>
+        <Person name={this.state.persons[0].name} age={this.getAge()} />
+        <Person name={this.state.persons[1].name} age={this.getAge()} />
+        <Person name={this.state.persons[2].name} age={this.getAge()}>
           My Hobbies - racing
         </Person>
       </div>
