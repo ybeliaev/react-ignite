@@ -2,11 +2,11 @@
   width: 30%;
   margin: 1rem auto;
   padding: 1rem;
-  border: 1px solid #eee;
+  border: 1px solid rgba(255, 205, 171, 1);
   border-radius: 0.2rem;
   box-shadow: 0 2px 3px #ccc;
   text-align: center;
-  background-color: rgba(255, 240, 221, 0.8);
+  background-color: rgba(255, 205, 171, 0.8);
   transition: all 0.3s;
 }
 

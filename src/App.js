@@ -30,7 +30,7 @@ class App extends Component {
   };
 
   getAge = () => {
-    return Math.floor(Math.random() * 50);
+    return Math.floor(Math.random() * 40 + 20); // 20 - 60
   };
   render() {
     const style = {
@@ -44,19 +44,9 @@ class App extends Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          <Person
-            name={this.state.persons[0].name}
-            age={this.getAge()}
-            click={this.switchNameHandler.bind(this, "Maximillian!")}
-          />
-          <Person
-            name={this.state.persons[1].name}
-            age={this.getAge()}
-            changed={this.nameChangedHandler}
-          />
-          <Person name={this.state.persons[2].name} age={this.getAge()}>
-            My Hobbies - racing
-          </Person>
+          {this.state.persons.map((item) => {
+            return <Person name={item.name} age={this.getAge()} />;
+          })}
         </div>
       );
     }
