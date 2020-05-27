@@ -1,13 +1,15 @@
 .Person {
-  width: 40%;
+  width: 30%;
   margin: 1rem auto;
   padding: 1rem;
   border: 1px solid #eee;
+  border-radius: 0.2rem;
   box-shadow: 0 2px 3px #ccc;
   text-align: center;
+  background-color: rgba(255, 240, 221, 0.8);
   transition: all 0.3s;
 }
 
 .Person:hover {
-  box-shadow: 1px 4px 6px #ccc;
+  box-shadow: 1px 4px 7px #ccc;
 }
