@@ -13,3 +13,6 @@
 .Person:hover {
   box-shadow: 1px 4px 7px #ccc;
 }
+.Person h3 {
+  cursor: pointer;
+}
