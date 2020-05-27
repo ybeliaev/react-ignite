@@ -36,10 +36,17 @@ class App extends Component {
     return Math.floor(Math.random() * 50);
   };
   render() {
+    const style = {
+      backgroundColor: "white",
+      font: "inherit",
+      border: "1px solid blue",
+      padding: "8px",
+      cursor: "pointer",
+    };
     return (
       <div className="App">
         <h1>Hello!</h1>
-        <button onClick={() => this.switchNameHandler("Mimi")}>
+        <button style={style} onClick={() => this.switchNameHandler("Mimi")}>
           Switch name
         </button>
         <Person
