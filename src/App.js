@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Person from "./Person/Person";
-import person from "./Person/Person";
 
 class App extends Component {
   state = {
@@ -15,7 +14,12 @@ class App extends Component {
   };
 
   deletePersonHandler = (index) => {
-    console.log(index);
+    let newPersons = [...this.state.persons];
+    newPersons.splice(index, 1);
+    console.log(newPersons);
+    this.setState({
+      persons: newPersons,
+    });
   };
   togglePersonsHandler = () => {
     this.setState({
