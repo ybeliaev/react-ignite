@@ -5,3 +5,9 @@ body {
 .App {
   text-align: center;
 }
+.red {
+  color: #960c78;
+}
+.bold {
+  font-weight: bold;
+}

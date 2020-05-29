@@ -41,6 +41,7 @@ class App extends Component {
   getAge = () => {
     return Math.floor(Math.random() * 40 + 20); // 20 - 60
   };
+
   render() {
     const style = {
       backgroundColor: "white",
@@ -48,6 +49,7 @@ class App extends Component {
       border: "1px solid blue",
       padding: "8px",
       cursor: "pointer",
+      transition: "all 0.3s ease-out",
     };
     let persons = null;
     if (this.state.showPersons) {
@@ -66,12 +68,20 @@ class App extends Component {
           })}
         </div>
       );
-      style.backgroundColor = "red";
+      style.backgroundColor = "tomato";
       style.color = "white";
+    }
+    let classes = [];
+    if (this.state.persons.length <= 2) {
+      classes.push("red");
+    }
+    if (this.state.persons.length <= 1) {
+      classes.push("bold");
     }
     return (
       <div className="App">
-        <h1>Hello!</h1>
+        <h1>Hello people!</h1>
+        <p className={classes.join(" ")}>It's realy working!</p>
         <button style={style} onClick={this.togglePersonsHandler}>
           Toggle person
         </button>
