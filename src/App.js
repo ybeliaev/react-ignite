@@ -66,6 +66,8 @@ class App extends Component {
           })}
         </div>
       );
+      style.backgroundColor = "red";
+      style.color = "white";
     }
     return (
       <div className="App">
