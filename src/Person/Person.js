@@ -12,16 +12,14 @@ const StyledDiv = styled.div`
   background-color: rgba(255, 205, 171, 0.8);
   transition: all 0.3s;
 
-  :hover {
+  &:hover {
     box-shadow: 1px 4px 7px #ccc;
   }
   h3 {
     cursor: pointer;
   }
   @media (min-width: 800px) {
-     {
-      width: 400px;
-    }
+    width: 400px;
   }
 `;
 
