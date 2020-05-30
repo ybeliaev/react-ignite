@@ -16,3 +16,8 @@
 .Person h3 {
   cursor: pointer;
 }
+@media (min-width: 450px) {
+  .Person {
+    width: 400px;
+  }
+}
