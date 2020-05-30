@@ -4,7 +4,7 @@ import "./App.css";
 import Person from "./Person/Person";
 
 const StyledButton = styled.button`
-  background-color: white;
+  background-color: ${(props) => (props.alt ? "tomato" : "yellow")};
   font: inherit;
   border: 1px solid blue;
   padding: 8px;
@@ -89,7 +89,11 @@ class App extends Component {
       <div className="App">
         <h1>Hello people!</h1>
         <p className={classes.join(" ")}>It's realy working!</p>
-        <StyledButton style={style} onClick={this.togglePersonsHandler}>
+        <StyledButton
+          alt={this.state.showPersons}
+          style={style}
+          onClick={this.togglePersonsHandler}
+        >
           Toggle person
         </StyledButton>
         {persons}
