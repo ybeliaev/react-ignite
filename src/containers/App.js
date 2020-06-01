@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import "./App.css";
-import Person from "./Person/Person";
-import ErrorBoundary from "./ErrorBoundery/ErrorBoundary";
+import Persons from "../components/Persons/Persons";
 
 const StyledButton = styled.button`
   background-color: ${(props) => (props.alt ? "tomato" : "yellow")};
@@ -40,6 +39,7 @@ class App extends Component {
     this.setState({
       showPersons: !this.state.showPersons,
     });
+    console.log(this.state.showPersons);
   };
   nameChangeHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex((elem) => elem.id === id);
@@ -53,9 +53,9 @@ class App extends Component {
     this.setState({ persons: newPersons });
   };
 
-  getAge = () => {
-    return Math.floor(Math.random() * 40 + 20); // 20 - 60
-  };
+  // getAge = () => {
+  //   return Math.floor(Math.random() * 40 + 20); // 20 - 60
+  // };
 
   render() {
     const style = {};
@@ -63,18 +63,11 @@ class App extends Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this.state.persons.map((item, index) => {
-            return (
-              <ErrorBoundary key={item.id}>
-                <Person
-                  name={item.name}
-                  age={this.getAge()}
-                  click={() => this.deletePersonHandler(index)}
-                  changed={(event) => this.nameChangeHandler(event, item.id)}
-                />
-              </ErrorBoundary>
-            );
-          })}
+          <Persons
+            persons={this.state.persons}
+            clicked={this.deletePersonHandler}
+            changed={this.nameChangeHandler}
+          />
         </div>
       );
       style.backgroundColor = "tomato";

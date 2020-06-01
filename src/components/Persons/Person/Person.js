@@ -23,16 +23,16 @@ const StyledDiv = styled.div`
   }
 `;
 
-const person = (props) => {
+const Person = (props) => {
   return (
     // <div className="Person">
     <StyledDiv>
       <h3 onClick={props.click}>Hi, {props.name}!</h3>
-      <p>You have {props.age} yeare</p>
+      <p>You have {props.age} year</p>
       <p>{props.children}</p>
       <input type="text" onChange={props.changed} value={props.name} />
     </StyledDiv>
   );
 };
 
-export default person;
+export default Person;
