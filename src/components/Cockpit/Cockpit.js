@@ -17,19 +17,23 @@ const StyledButton = styled.button`
 
 const Cockpit = (props) => {
   let classes = [];
-  if (this.state.persons.length <= 2) {
+  if (props.persons.length <= 2) {
     classes.push("red");
   }
-  if (this.state.persons.length <= 1) {
+  if (props.persons.length <= 1) {
     classes.push("bold");
   }
+
+  const style = {};
+  style.backgroundColor = "tomato";
+  style.color = "white";
   return (
     <div>
       <p className={classes.join(" ")}>It's realy working!</p>
       <StyledButton
-        alt={this.state.showPersons}
+        alt={props.showPersons}
         style={style}
-        onClick={this.togglePersonsHandler}
+        onClick={props.toggleClick}
       >
         Toggle person
       </StyledButton>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import styled from "styled-components";
 import "./App.css";
 import Persons from "../components/Persons/Persons";
+import Cockpit from "../components/Cockpit/Cockpit";
 
 class App extends Component {
   state = {
@@ -11,7 +12,7 @@ class App extends Component {
       { id: "lk4ud32", name: "Nikolya", age: 41 },
     ],
     otherState: "some other value",
-    showPersons: false,
+    showPersons: true,
   };
 
   deletePersonHandler = (index) => {
@@ -26,7 +27,6 @@ class App extends Component {
     this.setState({
       showPersons: !this.state.showPersons,
     });
-    console.log(this.state.showPersons);
   };
   nameChangeHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex((elem) => elem.id === id);
@@ -45,7 +45,6 @@ class App extends Component {
   // };
 
   render() {
-    const style = {};
     let persons = null;
     if (this.state.showPersons) {
       persons = (
@@ -57,14 +56,16 @@ class App extends Component {
           />
         </div>
       );
-      style.backgroundColor = "tomato";
-      style.color = "white";
     }
 
     return (
       <div className="App">
         <h1>Hello people!</h1>
-
+        <Cockpit
+          persons={this.state.persons}
+          showPersons={this.state.showPersons}
+          toggleClick={this.togglePersonsHandler}
+        />
         {persons}
       </div>
     );
