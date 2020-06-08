@@ -1,8 +1,9 @@
 import React from "react";
-import ErrorBoundary from "../../ErrorBoundery/ErrorBoundary";
+// import ErrorBoundary from "../../ErrorBoundery/ErrorBoundary";
 import Person from "./Person/Person";
 
 const Persons = (props) => {
+  console.log("Persons.js rendering..");
   return props.persons.map((person, index) => {
     return (
       <Person

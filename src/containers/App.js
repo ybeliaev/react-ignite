@@ -5,6 +5,10 @@ import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log("App.js constractor");
+  }
   state = {
     persons: [
       { id: "asd87as", name: "Julia", age: 26 },
@@ -14,7 +18,17 @@ class App extends Component {
     otherState: "some other value",
     showPersons: true,
   };
-
+  // getDerivedStateFromProps викликається безспосередньо перед викликом методу render, як при першому рендерингу, так і при всіх наступних оновленнях. Він має повернути об’єкт для оновлення стану або null, щоб не оновлювати нічого.
+  static getDerivedStateFromProps(props, state) {
+    console.log("App.js getDerivedStateFromProps", props);
+    return state;
+  }
+  componentWillMount() {
+    console.log("App.js componentWillMount");
+  }
+  componentDidMount() {
+    console.log("App.js componentDidMount");
+  }
   deletePersonHandler = (index) => {
     let newPersons = [...this.state.persons];
     newPersons.splice(index, 1);
@@ -36,7 +50,7 @@ class App extends Component {
     person.name = event.target.value;
     const newPersons = [...this.state.persons];
     newPersons[personIndex] = person;
-    console.log(newPersons);
+
     this.setState({ persons: newPersons });
   };
 
@@ -45,6 +59,7 @@ class App extends Component {
   // };
 
   render() {
+    console.log("App.js render");
     let persons = null;
     if (this.state.showPersons) {
       persons = (
