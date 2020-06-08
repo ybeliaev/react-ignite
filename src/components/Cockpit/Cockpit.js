@@ -29,6 +29,7 @@ const Cockpit = (props) => {
   style.color = "white";
   return (
     <div>
+      <h2>{props.title} Without "this" - it's function</h2>
       <p className={classes.join(" ")}>It's realy working!</p>
       <StyledButton
         alt={props.showPersons}
