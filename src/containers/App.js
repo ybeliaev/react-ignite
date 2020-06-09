@@ -56,7 +56,9 @@ class App extends Component {
     const newPersons = [...this.state.persons];
     newPersons[personIndex] = person;
 
-    this.setState({ persons: newPersons });
+    this.setState((prevState, props) => {
+      return { persons: newPersons };
+    });
   };
 
   // getAge = () => {
