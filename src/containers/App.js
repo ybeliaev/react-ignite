@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit";
+import AuxWithClass from "../hoc/AuxWithClass";
 
 class App extends Component {
   constructor(props) {
@@ -78,7 +79,7 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
+      <AuxWithClass classes="App">
         <h1>Hello people!</h1>
         <Cockpit
           title={this.props.appTitle}
@@ -87,7 +88,7 @@ class App extends Component {
           toggleClick={this.togglePersonsHandler}
         />
         {persons}
-      </div>
+      </AuxWithClass>
     );
   }
 }
