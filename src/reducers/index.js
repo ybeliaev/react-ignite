@@ -4,9 +4,9 @@ import gamesReducer from './gamesReducer'
 
 
 
-const rootReducers = combineReducers({
+const rootReducer = combineReducers({
     games: gamesReducer,
     
 })
 
-export default rootReducers
+export default rootReducer
