@@ -1,7 +1,7 @@
 //Base URL
 const base_url = 'https://api.rawg.io/api/'
 
-// ef9caad660dd4a14987b73065215a758
+// API key
 const key = 'ef9caad660dd4a14987b73065215a758'
 
 //Getting the date
