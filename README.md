@@ -8,4 +8,4 @@ In the project directory, you can run:
 
 ### `yarn start`
 
-### Problem - "has been blocked by CORS policy". I use key API, but nothing..
+### Problem - "has been blocked by CORS policy". I use key API, but nothing..(don't get detail info about games)
