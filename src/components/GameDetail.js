@@ -16,7 +16,7 @@ const GameDetail = () => {
                     <Detail>
                         <Stats>
                             <div className="rating">
-                                <motion.h3 layoutId={`title ${pathId}`}>
+                                <motion.h3 layoutId={`title `}>
                                     {game.name}
                                 </motion.h3>
                                 <p>Rating: {game.rating}</p>
@@ -28,9 +28,7 @@ const GameDetail = () => {
                                         <img
                                             alt={data.platform.name}
                                             key={data.platform.id}
-                                            src={getPlatform(
-                                                data.platform.name
-                                            )}
+                                            src={''}
                                         ></img>
                                     ))}
                                 </Platforms>
@@ -38,8 +36,8 @@ const GameDetail = () => {
                         </Stats>
                         <Media>
                             <motion.img
-                                layoutId={`image ${pathId}`}
-                                src={smallImage(game.background_image, 1280)}
+                                layoutId={`image ${''}`}
+                                src={''}
                                 alt={game.background_image}
                             />
                         </Media>
@@ -49,7 +47,7 @@ const GameDetail = () => {
                         <div className="gallery">
                             {screen.results.map((screen) => (
                                 <img
-                                    src={smallImage(screen.image, 1280)}
+                                    src={''}
                                     key={screen.id}
                                     alt={screen.image}
                                 />
